@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package flight.v1;
+
+import "google/protobuf/timestamp.proto";
+
+service FlightService {
+  rpc FlightEvent(FlightEventRequest) returns (FlightEventResponse);
+}
+
+message FlightEventRequest {
+  string message = 1;
+  string level = 2;
+}
+
+message FlightEventResponse {
+  string acknowledgment = 1;
+  google.protobuf.Timestamp received_at = 2;
+}

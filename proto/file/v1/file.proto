@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package file.v1;
+
+service FileService {
+  rpc Upload(stream UploadRequest) returns (UploadResponse);
+}
+
+message UploadRequest {
+  bytes data = 1;
+}
+
+message UploadResponse {
+  uint64 size = 1;
+  uint32 chunks = 2;
+}

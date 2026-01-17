@@ -1,0 +1,25 @@
+{
+  "name": "connect-bun",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/bun_main.ts",
+    "node": "npx tsx src/node_main.ts",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.6",
+    "typescript": "5"
+  },
+  "dependencies": {
+    "@bufbuild/buf": "^1.63.0",
+    "@bufbuild/protobuf": "^2.10.2",
+    "@connectrpc/connect": "^2.1.1",
+    "@connectrpc/connect-node": "^2.1.1",
+    "@connectrpc/validate": "^0.2.0"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "protobufjs"
+    ]
+  }
+}
