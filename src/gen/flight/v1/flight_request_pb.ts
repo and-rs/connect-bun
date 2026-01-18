@@ -2,17 +2,29 @@
 // @generated from file flight/v1/flight_request.proto (package flight.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
-import type { Timestamp } from "@bufbuild/protobuf/wkt";
-import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
-import type { Message } from "@bufbuild/protobuf";
+import type {
+  GenFile,
+  GenMessage,
+  GenService,
+} from "@bufbuild/protobuf/codegenv2"
+import {
+  fileDesc,
+  messageDesc,
+  serviceDesc,
+} from "@bufbuild/protobuf/codegenv2"
+import type { Timestamp } from "@bufbuild/protobuf/wkt"
+import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt"
+import type { Message } from "@bufbuild/protobuf"
 
 /**
  * Describes the file flight/v1/flight_request.proto.
  */
-export const file_flight_v1_flight_request: GenFile = /*@__PURE__*/
-  fileDesc("Ch5mbGlnaHQvdjEvZmxpZ2h0X3JlcXVlc3QucHJvdG8SCWZsaWdodC52MSI0ChJGbGlnaHRFdmVudFJlcXVlc3QSDwoHbWVzc2FnZRgBIAEoCRINCgVsZXZlbBgCIAEoCSJeChNGbGlnaHRFdmVudFJlc3BvbnNlEhYKDmFja25vd2xlZGdtZW50GAEgASgJEi8KC3JlY2VpdmVkX2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcDJdCg1GbGlnaHRTZXJ2aWNlEkwKC0ZsaWdodEV2ZW50Eh0uZmxpZ2h0LnYxLkZsaWdodEV2ZW50UmVxdWVzdBoeLmZsaWdodC52MS5GbGlnaHRFdmVudFJlc3BvbnNlYgZwcm90bzM", [file_google_protobuf_timestamp]);
+export const file_flight_v1_flight_request: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    "Ch5mbGlnaHQvdjEvZmxpZ2h0X3JlcXVlc3QucHJvdG8SCWZsaWdodC52MSI0ChJGbGlnaHRFdmVudFJlcXVlc3QSDwoHbWVzc2FnZRgBIAEoCRINCgVsZXZlbBgCIAEoCSJeChNGbGlnaHRFdmVudFJlc3BvbnNlEhYKDmFja25vd2xlZGdtZW50GAEgASgJEi8KC3JlY2VpdmVkX2F0GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcDJdCg1GbGlnaHRTZXJ2aWNlEkwKC0ZsaWdodEV2ZW50Eh0uZmxpZ2h0LnYxLkZsaWdodEV2ZW50UmVxdWVzdBoeLmZsaWdodC52MS5GbGlnaHRFdmVudFJlc3BvbnNlYgZwcm90bzM",
+    [file_google_protobuf_timestamp],
+  )
 
 /**
  * @generated from message flight.v1.FlightEventRequest
@@ -21,20 +33,21 @@ export type FlightEventRequest = Message<"flight.v1.FlightEventRequest"> & {
   /**
    * @generated from field: string message = 1;
    */
-  message: string;
+  message: string
 
   /**
    * @generated from field: string level = 2;
    */
-  level: string;
-};
+  level: string
+}
 
 /**
  * Describes the message flight.v1.FlightEventRequest.
  * Use `create(FlightEventRequestSchema)` to create a new message.
  */
-export const FlightEventRequestSchema: GenMessage<FlightEventRequest> = /*@__PURE__*/
-  messageDesc(file_flight_v1_flight_request, 0);
+export const FlightEventRequestSchema: GenMessage<FlightEventRequest> =
+  /*@__PURE__*/
+  messageDesc(file_flight_v1_flight_request, 0)
 
 /**
  * @generated from message flight.v1.FlightEventResponse
@@ -43,20 +56,21 @@ export type FlightEventResponse = Message<"flight.v1.FlightEventResponse"> & {
   /**
    * @generated from field: string acknowledgment = 1;
    */
-  acknowledgment: string;
+  acknowledgment: string
 
   /**
    * @generated from field: google.protobuf.Timestamp received_at = 2;
    */
-  receivedAt?: Timestamp;
-};
+  receivedAt?: Timestamp
+}
 
 /**
  * Describes the message flight.v1.FlightEventResponse.
  * Use `create(FlightEventResponseSchema)` to create a new message.
  */
-export const FlightEventResponseSchema: GenMessage<FlightEventResponse> = /*@__PURE__*/
-  messageDesc(file_flight_v1_flight_request, 1);
+export const FlightEventResponseSchema: GenMessage<FlightEventResponse> =
+  /*@__PURE__*/
+  messageDesc(file_flight_v1_flight_request, 1)
 
 /**
  * @generated from service flight.v1.FlightService
@@ -66,10 +80,8 @@ export const FlightService: GenService<{
    * @generated from rpc flight.v1.FlightService.FlightEvent
    */
   flightEvent: {
-    methodKind: "unary";
-    input: typeof FlightEventRequestSchema;
-    output: typeof FlightEventResponseSchema;
-  },
-}> = /*@__PURE__*/
-  serviceDesc(file_flight_v1_flight_request, 0);
-
+    methodKind: "unary"
+    input: typeof FlightEventRequestSchema
+    output: typeof FlightEventResponseSchema
+  }
+}> = /*@__PURE__*/ serviceDesc(file_flight_v1_flight_request, 0)

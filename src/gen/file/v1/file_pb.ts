@@ -2,15 +2,26 @@
 // @generated from file file/v1/file.proto (package file.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
-import type { Message } from "@bufbuild/protobuf";
+import type {
+  GenFile,
+  GenMessage,
+  GenService,
+} from "@bufbuild/protobuf/codegenv2"
+import {
+  fileDesc,
+  messageDesc,
+  serviceDesc,
+} from "@bufbuild/protobuf/codegenv2"
+import type { Message } from "@bufbuild/protobuf"
 
 /**
  * Describes the file file/v1/file.proto.
  */
-export const file_file_v1_file: GenFile = /*@__PURE__*/
-  fileDesc("ChJmaWxlL3YxL2ZpbGUucHJvdG8SB2ZpbGUudjEiHQoNVXBsb2FkUmVxdWVzdBIMCgRkYXRhGAEgASgMIi4KDlVwbG9hZFJlc3BvbnNlEgwKBHNpemUYASABKAQSDgoGY2h1bmtzGAIgASgNMkoKC0ZpbGVTZXJ2aWNlEjsKBlVwbG9hZBIWLmZpbGUudjEuVXBsb2FkUmVxdWVzdBoXLmZpbGUudjEuVXBsb2FkUmVzcG9uc2UoAWIGcHJvdG8z");
+export const file_file_v1_file: GenFile =
+  /*@__PURE__*/
+  fileDesc(
+    "ChJmaWxlL3YxL2ZpbGUucHJvdG8SB2ZpbGUudjEiHQoNVXBsb2FkUmVxdWVzdBIMCgRkYXRhGAEgASgMIi4KDlVwbG9hZFJlc3BvbnNlEgwKBHNpemUYASABKAQSDgoGY2h1bmtzGAIgASgNIikKD0Rvd25sb2FkUmVxdWVzdBIWCg5yZXF1ZXN0ZWRfc2l6ZRgBIAEoBCIgChBEb3dubG9hZFJlc3BvbnNlEgwKBGRhdGEYASABKAwyjQEKC0ZpbGVTZXJ2aWNlEjsKBlVwbG9hZBIWLmZpbGUudjEuVXBsb2FkUmVxdWVzdBoXLmZpbGUudjEuVXBsb2FkUmVzcG9uc2UoARJBCghEb3dubG9hZBIYLmZpbGUudjEuRG93bmxvYWRSZXF1ZXN0GhkuZmlsZS52MS5Eb3dubG9hZFJlc3BvbnNlMAFiBnByb3RvMw",
+  )
 
 /**
  * @generated from message file.v1.UploadRequest
@@ -19,15 +30,16 @@ export type UploadRequest = Message<"file.v1.UploadRequest"> & {
   /**
    * @generated from field: bytes data = 1;
    */
-  data: Uint8Array;
-};
+  data: Uint8Array
+}
 
 /**
  * Describes the message file.v1.UploadRequest.
  * Use `create(UploadRequestSchema)` to create a new message.
  */
-export const UploadRequestSchema: GenMessage<UploadRequest> = /*@__PURE__*/
-  messageDesc(file_file_v1_file, 0);
+export const UploadRequestSchema: GenMessage<UploadRequest> =
+  /*@__PURE__*/
+  messageDesc(file_file_v1_file, 0)
 
 /**
  * @generated from message file.v1.UploadResponse
@@ -36,20 +48,57 @@ export type UploadResponse = Message<"file.v1.UploadResponse"> & {
   /**
    * @generated from field: uint64 size = 1;
    */
-  size: bigint;
+  size: bigint
 
   /**
    * @generated from field: uint32 chunks = 2;
    */
-  chunks: number;
-};
+  chunks: number
+}
 
 /**
  * Describes the message file.v1.UploadResponse.
  * Use `create(UploadResponseSchema)` to create a new message.
  */
-export const UploadResponseSchema: GenMessage<UploadResponse> = /*@__PURE__*/
-  messageDesc(file_file_v1_file, 1);
+export const UploadResponseSchema: GenMessage<UploadResponse> =
+  /*@__PURE__*/
+  messageDesc(file_file_v1_file, 1)
+
+/**
+ * @generated from message file.v1.DownloadRequest
+ */
+export type DownloadRequest = Message<"file.v1.DownloadRequest"> & {
+  /**
+   * @generated from field: uint64 requested_size = 1;
+   */
+  requestedSize: bigint
+}
+
+/**
+ * Describes the message file.v1.DownloadRequest.
+ * Use `create(DownloadRequestSchema)` to create a new message.
+ */
+export const DownloadRequestSchema: GenMessage<DownloadRequest> =
+  /*@__PURE__*/
+  messageDesc(file_file_v1_file, 2)
+
+/**
+ * @generated from message file.v1.DownloadResponse
+ */
+export type DownloadResponse = Message<"file.v1.DownloadResponse"> & {
+  /**
+   * @generated from field: bytes data = 1;
+   */
+  data: Uint8Array
+}
+
+/**
+ * Describes the message file.v1.DownloadResponse.
+ * Use `create(DownloadResponseSchema)` to create a new message.
+ */
+export const DownloadResponseSchema: GenMessage<DownloadResponse> =
+  /*@__PURE__*/
+  messageDesc(file_file_v1_file, 3)
 
 /**
  * @generated from service file.v1.FileService
@@ -59,10 +108,16 @@ export const FileService: GenService<{
    * @generated from rpc file.v1.FileService.Upload
    */
   upload: {
-    methodKind: "client_streaming";
-    input: typeof UploadRequestSchema;
-    output: typeof UploadResponseSchema;
-  },
-}> = /*@__PURE__*/
-  serviceDesc(file_file_v1_file, 0);
-
+    methodKind: "client_streaming"
+    input: typeof UploadRequestSchema
+    output: typeof UploadResponseSchema
+  }
+  /**
+   * @generated from rpc file.v1.FileService.Download
+   */
+  download: {
+    methodKind: "server_streaming"
+    input: typeof DownloadRequestSchema
+    output: typeof DownloadResponseSchema
+  }
+}> = /*@__PURE__*/ serviceDesc(file_file_v1_file, 0)

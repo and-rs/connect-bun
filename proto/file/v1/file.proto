@@ -4,6 +4,7 @@ package file.v1;
 
 service FileService {
   rpc Upload(stream UploadRequest) returns (UploadResponse);
+  rpc Download(DownloadRequest) returns (stream DownloadResponse);
 }
 
 message UploadRequest {
@@ -13,4 +14,12 @@ message UploadRequest {
 message UploadResponse {
   uint64 size = 1;
   uint32 chunks = 2;
+}
+
+message DownloadRequest {
+  uint64 requested_size = 1;
+}
+
+message DownloadResponse {
+  bytes data = 1;
 }

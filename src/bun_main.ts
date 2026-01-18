@@ -48,6 +48,7 @@ function iterableToStream(
   iterable: AsyncIterable<Uint8Array>,
 ): ReadableStream<Uint8Array> {
   return new ReadableStream({
+    // Bun has backpressure covered in its implementation already
     async start(controller) {
       try {
         for await (const chunk of iterable) {
