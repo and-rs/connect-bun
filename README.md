@@ -52,3 +52,12 @@ Results:
 - Memory usage tracking
 - Performance benchmarking (100MB test file)
 - Comparison between Bun and Node.js implementations
+
+## TODOS:
+
+- [ ] Add Node version (v25), Bun version, OS, CPU specs as a table
+- [ ] Run with HTTP/2 enabled (pass `httpVersion: "2.0"` to Connect transport)
+- [ ] Capture GC pauses/CPU usage (use `autocannon --latency` for finer detail)
+- [ ] Vary payload sizes: 1KB, 64KB, 1MB (test where the crossover is)
+- [ ] Document why you chose HTTP/1.1 first, then explain the HTTP/2 results
+- [ ] Add a "Practical Implications" section: "When does this 2.1x matter?"
